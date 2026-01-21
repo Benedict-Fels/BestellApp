@@ -1,5 +1,5 @@
 
-function loadDishes(){
+function loadDishes() {
     for (let i = 0; i < dishes.burger.length; i++) {
         loadDishTemplate('burger', i);
     }
@@ -11,18 +11,39 @@ function loadDishes(){
     }
 }
 
-function loadDishTemplate(type, i){
-    const dishElement = document.getElementById(`${type}ID`);
-    dishElement.innerHTML += `
-     <div class="dish">
-         <img class="dish-img" src="./assets/food/${type+i}.png" alt="${dishes[type][i].name}">
-         <div class="dish-description">
-             <h3>${dishes[type][i].name}</h3>
-             <p>${dishes[type][i].description}</p>
-         </div>
-         <div class="dish-price">
-             <p>${dishes[type][i].price}</p>
-             <button>add to basket</button>
-         </div>
-     </div>`
+function loadBasketDish(){
+    let basketDishes = "";
+    let categories = Object.keys(dishes);
+    categories.forEach((category) => {
+        dishes[category].forEach((dish) => {
+        if (dish.amount > 0) {
+            basketDishes += loadBasketDishTemplate(dish);
+            console.log(dish);
+            
+        }
+        });
+    });
+    
+    return basketDishes
+}
+
+function addToBasket(dish){
+    dish.amount += 1;
+    loadBasketDish();
+}
+
+function calcSubTotal() {
+    let categories = Object.keys(dishes);
+    let SubTotal = 0;
+    categories.forEach((category) => {
+        dishes[category].forEach((dish) => {
+        SubTotal += dish.amount * dish.price;
+        });
+    });
+    return SubTotal
+}
+
+function numberToEuro(number){
+    let currency = `${number.toFixed(2).toString().replace('.', ',')} Є`;
+    return currency;
 }

@@ -16,7 +16,7 @@
     <title>BestellApp</title>
 </head>
 
-<body onload="loadDishes()">
+<body onload="loadDishes(),loadBasketTemplate()">
     <header></header>
     <div class="top-section">
         <img class="background-img" src="./assets/background-dishes.jpg" alt="verschiedene Pizza und Burger Gerichte">
@@ -29,40 +29,7 @@
     <p class="motto">The best of Burgers, Pizza and Greens, all in one great place</p>
 
     <div class="basket">
-        <div>
-            <h4>Your Basket</h4>
-            <div id="basket-dishesID" class="basket-dishes">
-                <div id="basket-dishesID" class="basket-dish">
-                <div class="display-flex">
-                    <p>amount x name</p>
-                    <img src="" alt="Papierkorb">
-                </div>
-                <div class="display-flex amount-price">
-                    <div class="display-flex amount-adjust-div">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 8 8"><path d="M0 0v2h8v-2h-8z" transform="translate(0 3)"/></svg>
-                        <p>amount</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="black"><path d="M10 1H6V6L1 6V10H6V15H10V10H15V6L10 6V1Z" fill="#030708"/></svg>
-                    </div>
-                    <p>price</p>
-                </div>
-                </div>
-            </div>
-            <div class="basket-price-div">
-            <div class="display-flex">
-                <p>Subtotal</p>
-                <p>allAmount * price</p>
-            </div>
-            <div class="display-flex">
-                <p>Delivery Fee</p>
-                <p>4,99 €</p>
-            </div>
-            <div class="white-line"></div>
-            <div class="display-flex">
-                <p>Total</p>
-                <p>allAmount * price + DelFee</p>
-            </div>
-            <button class="orderButton">Buy now ${total}</button>
-            </div>
+        <div id="basketID">
         </div>
     </div>
     <section>

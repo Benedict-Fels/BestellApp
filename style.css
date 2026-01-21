@@ -4,7 +4,7 @@
 }
 
 header {
-    background-color: orange;
+    background-color: #E76C1F;
     height: 120px;
 }
 
@@ -30,7 +30,7 @@ header {
 }
 
 h1 {
-    color: orange;
+    color: #E76C1F;
     font-size: 48px;
     text-align: center;
 }
@@ -104,9 +104,9 @@ h2 {
 .basket {
     position: sticky;
     top: 20px;
-    width: 400px;
-    height: 630px;
-    margin-bottom: -630px;
+    width: 500px;
+    height: 700px;
+    margin-bottom: -700px;
     background-color: #363534;
     border-radius: 20px 0 0 20px;
     z-index: 3;
@@ -119,7 +119,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 300px;
+    height: 350px;
     overflow-y: auto;
     box-sizing: initial;
     margin: 8px 26px;
@@ -153,6 +153,13 @@ h2 {
 .amount-adjust-div svg{
 height: 16px;
 width: 16px;
+cursor: pointer;
+}
+
+button{
+    cursor: pointer;
+    min-width: 120px;
+    box-sizing: border-box;
 }
 
 .amount-adjust-div p{
@@ -177,14 +184,14 @@ h4 {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    padding: 0 16px;
+    padding: 6px 32px;
     flex-grow: 1;
 }
 
 .white-line {
     border-bottom: 3px white solid;
     border-radius: 5px;
-    width: 316px;
+    width: 416px;
 }
 
 .orderButton{
@@ -229,7 +236,6 @@ h3 {
     margin: 10px;
     display: flex;
     flex-grow: 1;
-    justify-self: end;
     flex-direction: column;
     justify-content: space-between;
     align-items: end;

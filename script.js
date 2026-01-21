@@ -11,25 +11,37 @@ function loadDishes() {
     }
 }
 
-function loadBasketDish(){
+function loadBasketDish() {
     let basketDishes = "";
     let categories = Object.keys(dishes);
     categories.forEach((category) => {
-        dishes[category].forEach((dish) => {
-        if (dish.amount > 0) {
-            basketDishes += loadBasketDishTemplate(dish);
-            console.log(dish);
-            
-        }
+        dishes[category].forEach((dish, i) => {
+            if (dish.amount > 0) {
+                basketDishes += loadBasketDishTemplate(dish, category, i);
+            }
         });
     });
-    
     return basketDishes
 }
 
-function addToBasket(dish){
-    dish.amount += 1;
-    loadBasketDish();
+function addToBasket(category, i) {
+    dishes[category][i].amount += 1;
+    loadBasketTemplate();
+    updateBtn(category, i);
+}
+
+function removeFromBasket(category, i) {
+    dishes[category][i].amount -= 1;
+    loadBasketTemplate();
+    updateBtn(category, i);
+}
+
+function updateBtn(category, i) {
+    if (dishes[category][i].amount == 0) {
+        restoreBtn(category, i);
+    } else {
+        changeBtn(category, i);
+    }
 }
 
 function calcSubTotal() {
@@ -37,13 +49,13 @@ function calcSubTotal() {
     let SubTotal = 0;
     categories.forEach((category) => {
         dishes[category].forEach((dish) => {
-        SubTotal += dish.amount * dish.price;
+            SubTotal += dish.amount * dish.price;
         });
     });
     return SubTotal
 }
 
-function numberToEuro(number){
+function numberToEuro(number) {
     let currency = `${number.toFixed(2).toString().replace('.', ',')} Є`;
     return currency;
 }

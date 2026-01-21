@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 header {
@@ -59,10 +59,6 @@ h1 span{
     text-align: center;
 }
 
-section{
-    
-}
-
 .dishes{
     display: flex;
     height: 60px;
@@ -100,6 +96,45 @@ h2{
     object-fit: contain;
     position: relative;
     bottom: 0px;
+}
+
+.dish{
+    height: 140px;
+    width: 800px;
+    display: flex;
+    /* justify-content: space-between; */
+    margin: 16px;
+    background-color: #FDEADC;
+    border-radius: 10px;
+}
+
+.dish-img{
+    height: 120px;
+    margin: 10px;
+    object-fit: contain;
+}
+h3{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.dish-description{
+    margin: 10px;
+}
+
+.dish-price{
+    margin: 10px;
+    display: flex;
+    flex-grow: 1;
+    justify-self: end;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    min-width: 140px;
+}
+
+.dish-price p{
+    font-size: 24px;
 }
 
 footer{

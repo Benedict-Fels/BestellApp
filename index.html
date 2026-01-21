@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="./db.js"></script>
-    <script src="./script.js"></script>
-    <script src="./template.js"></script>
+    <script defer src="./db.js"></script>
+    <script defer src="./script.js"></script>
+    <script defer src="./template.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./assets/icons/Logo 02.png">
     <title>BestellApp</title>
 </head>
 
-<body>
+<body onload="loadDishes()">
     <header></header>
     <div class="top-section">
         <img class="background-img" src="./assets/background-dishes.jpg" alt="verschiedene Pizza und Burger Gerichte">
@@ -28,29 +33,24 @@
             <img class="burger-icon" src="./assets/icons/burger-icon.png" alt="Burger Icon">
             <h2>Burger</h2>
         </div>
-        <br><br><br><br>
-        <div id="burgerID">Hier könnte ihre Werbung stehen</div>
-        <br><br><br><br>
+        <section id="burgerID">
+        </section>
     </section>
     <section>
         <div class="dishes">
             <img class="pizza-icon" src="./assets/icons/pizza-icon.png" alt="Burger Icon">
             <h2>Pizza</h2>
         </div>
-        <br><br><br><br>
-        <div id="burgerID"> Hier könnte ihre Werbung stehen</div>
-        <br><br><br><br>
+        <section id="pizzaID"></section>
     </section>
     <section>
         <div class="dishes">
             <img class="salad-icon" src="./assets/icons/salad-icon.png" alt="Burger Icon">
             <h2>Salat</h2>
         </div>
-        <br><br><br><br>
-        <div id="burgerID">Hier könnte ihre Werbung stehen</div>
-        <br><br><br><br>
+        <section id="saladID"></section>
     </section>
-<footer>A</footer>
+    <footer>A</footer>
 </body>
 
 </html>

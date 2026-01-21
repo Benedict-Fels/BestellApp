@@ -29,18 +29,18 @@ header {
     margin-top: -113px;
 }
 
-h1{
+h1 {
     color: orange;
     font-size: 48px;
     text-align: center;
 }
 
-h1 span{
+h1 span {
     color: black;
     font-size: 48px;
 }
 
-.rating{
+.rating {
     height: 28px;
     object-fit: contain;
     margin-left: 36px;
@@ -48,18 +48,21 @@ h1 span{
     border-radius: 5px;
 }
 
-.flex-center{
+.flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:8px 0;
+    margin: 8px 0;
 }
 
-.motto{
+.motto {
+    font-size: 24px;
+    font-weight: 700;
     text-align: center;
+    padding-bottom: 64px;
 }
 
-.dishes{
+.dishes-headline {
     display: flex;
     height: 60px;
     background-color: #E76C1F;
@@ -70,59 +73,158 @@ h1 span{
     padding-right: 120px;
 }
 
-h2{
+h2 {
     font-size: 40px;
     padding-left: 44px;
     padding-top: 8px;
     padding-bottom: 16px;
 }
 
-.burger-icon{
+.burger-icon {
     height: 90px;
     object-fit: contain;
     position: relative;
     bottom: 16px;
 }
 
-.pizza-icon{
+.pizza-icon {
     height: 90px;
     object-fit: contain;
     position: relative;
     bottom: 0px;
 }
 
-.salad-icon{
+.salad-icon {
     height: 90px;
     object-fit: contain;
     position: relative;
     bottom: 0px;
 }
 
-.dish{
+.basket {
+    position: sticky;
+    top: 20px;
+    width: 400px;
+    height: 625px;
+    margin-bottom: -625px;
+    background-color: #363534;
+    border-radius: 20px 0 0 20px;
+    z-index: 3;
+    justify-self: end;
+    color: white;
+
+}
+
+.basket-dishes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    box-sizing: initial;
+    margin: 8px 26px;
+}
+
+.basket-dish {
+    background-color: #FDEADC;
+    color: black;
+    border-radius: 10px;
+    margin: 4px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.display-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 6px 10px;
+}
+
+.amount-adjust-div{
+    width: 100px;
+    padding: 0;
+    align-items: center;
+}
+
+.amount-adjust-div svg{
+height: 16px;
+width: 16px;
+}
+
+.amount-adjust-div p{
+    padding: 0 8px;
+}
+.basket p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 32px;
+    color: #FDEADC;
+    text-align: center;
+    padding-top: 36px;
+    padding-bottom: 24px;
+}
+
+
+.basket-price-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 16px;
+    flex-grow: 1;
+}
+
+.white-line {
+    border-bottom: 3px white solid;
+    border-radius: 5px;
+    width: 316px;
+}
+
+.orderButton{
+    padding: 16px;
+    margin: 16px;
+    font-size: 32px;
+    font-weight: 700;
+    border-radius: 30px;
+    background-color: #E76C1F;
+    color: #FBFBFB;
+}
+
+.dishes {
+    margin-left: 120px;
+}
+
+.dish {
     height: 140px;
     width: 800px;
     display: flex;
-    /* justify-content: space-between; */
     margin: 16px;
     background-color: #FDEADC;
     border-radius: 10px;
 }
 
-.dish-img{
+.dish-img {
     height: 120px;
     margin: 10px;
     object-fit: contain;
 }
-h3{
+
+h3 {
     font-size: 24px;
     font-weight: 600;
 }
 
-.dish-description{
+.dish-description {
     margin: 10px;
 }
 
-.dish-price{
+.dish-price {
     margin: 10px;
     display: flex;
     flex-grow: 1;
@@ -133,11 +235,10 @@ h3{
     min-width: 140px;
 }
 
-.dish-price p{
+.dish-price p {
     font-size: 24px;
 }
 
-footer{
+footer {
     background-color: #E76C1F;
 }
-

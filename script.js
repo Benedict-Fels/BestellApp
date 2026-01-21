@@ -13,8 +13,6 @@ function loadDishes(){
 
 function loadDishTemplate(type, i){
     const dishElement = document.getElementById(`${type}ID`);
-    console.log(dishes[type][i].name);
-    
     dishElement.innerHTML += `
      <div class="dish">
          <img class="dish-img" src="./assets/food/${type+i}.png" alt="${dishes[type][i].name}">

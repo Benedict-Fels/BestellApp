@@ -7,7 +7,7 @@ let dishes = {
     },
     {
       "name": "All meat burger",
-      "description": "Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ souse",
+      "description": "Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ sauce",
       "price": "15.90"
     },
     {

@@ -51,7 +51,7 @@
         </div>
         <section class="dishes wrapper" id="pizzaID"></section>
     </section>
-    <section>
+    <section class="last-section">
         <div class="dishes-headline wrapper">
             <img class="salad-icon" src="./assets/icons/salad-icon.png" alt="Burger Icon">
             <h2>Salat</h2>
@@ -60,9 +60,17 @@
         </section>
     </section>
     <footer>
-        <span class="copyright">©2025 BurgerHouse</span>
-        <span>Imprint</span>
-        <span>Cookie Preferences</span>
+        <span class="footer-text">©2025 BurgerHouse</span>
+        <span class="footer-text">Imprint</span>
+        <span class="footer-text">Cookie Preferences</span>
+        <img id="homeID" onmousedown="registerClick('','','home')" onmouseup="resetIcon('home')" class="footer-icons display-none" src="./assets/icons/home.png" alt="Home">
+        <img id="personID" onmousedown="registerClick('','','person')" onmouseup="resetIcon('person')" class="footer-icons display-none" src="./assets/icons/person.png" alt="Person">
+        <img id="bestellappID" onmousedown="registerClick('','','bestellapp')" onmouseup="resetIcon('bestellapp')" class="footer-icons display-none" src="./assets/icons/bestellapp.png"
+            alt="BestellApp">
+        <div class="cart display-none">
+            <img class="footer-icons display-none" onmousedown="registerClick('','','shopping-cart')" onmouseup="openBasket()" id="shopping-cartID" src="./assets/icons/shopping-cart.png" alt="Shopping Cart">
+            <p id="shoppingCartAmountID" class="number display-none">3</p>
+        </div>
     </footer>
 </body>
 

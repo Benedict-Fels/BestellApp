@@ -1,7 +1,7 @@
 
 function loadDishTemplate(category, i) {
     const dishElement = document.getElementById(`${category}ID`);
-    console.log(`Generiere ID: ${category}${i}BtnID`);
+    // console.log(`Generiere ID: ${category}${i}BtnID`);
     dishElement.innerHTML += `
      <div class="dish">
          <img class="dish-img" src="./assets/food/${category + i}.png" alt="${dishes[category][i].name}">
@@ -11,7 +11,7 @@ function loadDishTemplate(category, i) {
          </div>
          <div class="dish-price">
              <p>${numberToEuro(dishes[category][i].price)}</p>
-             <div class="display-flex amount-adjust-div" id="${category}${i}BtnID">
+             <div class="add-basket-button" id="${category}${i}BtnID">
                 <button class="addToBasketBtn" onclick="addToBasket('${category}',${i}); changeBtn('${category}',${i})">add to basket</button>
              </div>
          </div>
@@ -50,7 +50,7 @@ function loadBasketDishTemplate(dish, category, i) {
                 <div class="basket-dish">
                 <div class="display-flex">
                     <p>${dish.amount} x ${dish.name}</p>
-                    <img id="${category}${i}trashID" onmousedown="clickIcon('${category}',${i},'trash')" onmouseup="clickedIcon('${category}',${i}, trash)" class="trashcan" src="./assets/icons/trashcan.png" alt="Papierkorb">
+                    <img id="${category}${i}trashID" onmouseup="deleteOrder('${category}',${i})" onmousedown="registerClick('${category}',${i},'trash')" class="trashcan" src="./assets/icons/trash.png" alt="Papierkorb">
                 </div>
                 <div class="display-flex amount-price">
                     <div class="display-flex amount-adjust-div">
@@ -67,6 +67,7 @@ function loadBasketDishTemplate(dish, category, i) {
 
 function changeBtn(category, i) {
     let addButton = document.getElementById(`${category}${i}BtnID`);
+    addButton.classList.add('amount-adjust-div');
     addButton.innerHTML = `
      <svg onclick="removeFromBasket('${category}',${i})" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 8 8"><path d="M0 0v2h8v-2h-8z" transform="translate(0 3)"/></svg>
      <p>${dishes[category][i].amount}</p>
@@ -76,6 +77,7 @@ function changeBtn(category, i) {
 
 function restoreBtn(category, i) {
     let addButton = document.getElementById(`${category}${i}BtnID`);
+    addButton.classList.remove('amount-adjust-div');
     addButton.innerHTML = `
      <button class="addToBasketBtn" onclick="addToBasket('${category}',${i}); changeBtn('${category}',${i})">add to basket</button>
     `

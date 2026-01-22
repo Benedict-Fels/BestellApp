@@ -60,17 +60,17 @@ function numberToEuro(number) {
     return currency;
 }
 
-function clickIcon(category, i, Icontype) {
-    console.log(Icontype);
-        dishes[category][i].amount = 0;
-        loadBasketTemplate();  
-        restoreBtn(category, i);
-    }
+function deleteOrder(category, i) {
+    dishes[category][i].amount = 0;
+    loadBasketTemplate();
+    restoreBtn(category, i);
+}
 
-    function clickedIcon(category, i, Icontype) {
-    console.log(Icontype);
-    
-        // dishes[category][i].amount = 0;
-        // loadBasketTemplate();  
-    }
+function resetIcon(Icontype) {
+    document.getElementById(`${Icontype}ID`).src = `./assets/icons/${Icontype}.png`;
+}
+
+function registerClick(category, i, Icontype) {
+    document.getElementById(`${category}${i}${Icontype}ID`).src = `./assets/icons/active-${Icontype}.png`;
+}
 

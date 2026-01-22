@@ -12,7 +12,7 @@ header {
 }
 
 header img {
-    height: 50px;
+    height: 40px;
     object-fit: contain;
     padding: 0 64px;
 }
@@ -78,8 +78,8 @@ h1 span {
     color: white;
     box-sizing: border-box;
     align-items: center;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 h2 {
@@ -111,6 +111,7 @@ h2 {
 }
 
 .addToBasketBtn {
+    min-width: 120px;
     display: flex;
     justify-content: center;
 }
@@ -118,7 +119,7 @@ h2 {
 .basket {
     position: sticky;
     top: 20px;
-    width: 500px;
+    width: 320px;
     height: 700px;
     margin-bottom: -700px;
     background-color: #363534;
@@ -133,7 +134,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 350px;
+    height: 330px;
     overflow-y: auto;
     box-sizing: initial;
     margin: 8px 26px;
@@ -158,10 +159,18 @@ h2 {
     padding: 6px 10px;
 }
 
-.trashcan{
+.add-basket-button{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    box-sizing: border-box;
+}
+
+.trashcan {
     height: 22px;
     object-fit: contain;
     cursor: pointer;
+    padding-left: 16px;
 }
 
 .amount-adjust-div {
@@ -178,7 +187,6 @@ h2 {
 
 button {
     cursor: pointer;
-    box-sizing: border-box;
 }
 
 .amount-adjust-div p {
@@ -211,7 +219,7 @@ h4 {
 .white-line {
     border-bottom: 3px white solid;
     border-radius: 5px;
-    width: 416px;
+    width: 260px;
 }
 
 .orderButton {
@@ -225,7 +233,7 @@ h4 {
 }
 
 .dishes {
-    margin-left: 120px;
+    margin-left: 60px;
 }
 
 .dish {
@@ -265,20 +273,49 @@ h3 {
 
 .dish-price p {
     font-size: 24px;
+    white-space: nowrap;
 }
 
 footer {
-    height: 150px;
+    height: 80px;
     display: flex;
-    left: 240px ;
+    justify-content: center;
     align-items: center;
     gap: 64px;
     color: white;
     background-color: #E76C1F;
 }
 
-.copyright{
-    padding-left: 240px;
+.footer-icons {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.display-none {
+    display: none;
+}
+
+.cart {
+    position: relative;
+    display: flex;
+    /* height: 80px;
+    width: 80px; */
+    align-items: end;
+}
+
+.number {
+    position: absolute;
+    overflow: hidden;
+    margin-top: -22px;
+    margin-left: 26px;
+    z-index: 3;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #FDEADC;
+    color: #E76C1F;
 }
 
 @media (min-width: 1680px) {
@@ -298,5 +335,67 @@ footer {
 
     .basket {
         right: calc(50% - 720px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .dish {
+        flex-direction: column;
+        width: 240px;
+        height: auto;
+    }
+
+    .dish-price {
+        flex-direction: row;
+        align-items: center;
+        flex-grow: 0;
+    }
+
+    .dish-description {
+        margin: 0 10px;
+        flex-grow: 1;
+    }
+
+    .dishes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: 330px;
+    }
+}
+
+@media (max-width: 660px) {
+
+    .last-section{
+        margin-bottom: 80px;
+    }
+
+    footer {
+        background-color: #363534;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .footer-text {
+        display: none;
+    }
+
+    .footer-icons {
+        display: block;
+    }
+
+    .cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .basket {
+        display: none;
+    }
+
+    .dishes {
+        margin: 0 30px;
     }
 }

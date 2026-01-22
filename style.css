@@ -6,6 +6,15 @@
 header {
     background-color: #E76C1F;
     height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    height: 50px;
+    object-fit: contain;
+    padding: 0 64px;
 }
 
 .top-section {
@@ -69,7 +78,7 @@ h1 span {
     color: white;
     box-sizing: border-box;
     align-items: center;
-    padding-left: 164px;
+    padding-left: 120px;
     padding-right: 120px;
 }
 
@@ -99,6 +108,11 @@ h2 {
     object-fit: contain;
     position: relative;
     bottom: 0px;
+}
+
+.addToBasketBtn {
+    display: flex;
+    justify-content: center;
 }
 
 .basket {
@@ -144,27 +158,33 @@ h2 {
     padding: 6px 10px;
 }
 
-.amount-adjust-div{
+.trashcan{
+    height: 22px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.amount-adjust-div {
     width: 60px;
     padding: 0;
     align-items: center;
 }
 
-.amount-adjust-div svg{
-height: 16px;
-width: 16px;
-cursor: pointer;
+.amount-adjust-div svg {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
 }
 
-button{
+button {
     cursor: pointer;
-    min-width: 120px;
     box-sizing: border-box;
 }
 
-.amount-adjust-div p{
+.amount-adjust-div p {
     padding: 0 8px;
 }
+
 .basket p {
     font-size: 20px;
     font-weight: 600;
@@ -194,7 +214,7 @@ h4 {
     width: 416px;
 }
 
-.orderButton{
+.orderButton {
     padding: 16px;
     margin: 16px;
     font-size: 32px;
@@ -213,6 +233,7 @@ h4 {
     width: 800px;
     display: flex;
     margin: 16px;
+    margin-left: 0;
     background-color: #FDEADC;
     border-radius: 10px;
 }
@@ -247,5 +268,35 @@ h3 {
 }
 
 footer {
+    height: 150px;
+    display: flex;
+    left: 240px ;
+    align-items: center;
+    gap: 64px;
+    color: white;
     background-color: #E76C1F;
+}
+
+.copyright{
+    padding-left: 240px;
+}
+
+@media (min-width: 1680px) {
+    header {
+        padding: 0 calc(50% - 720px);
+    }
+
+    .wrapper {
+        padding: 0 calc(50% - 720px);
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    footer {
+        padding: 0 calc(50% - 720px);
+    }
+
+    .basket {
+        right: calc(50% - 720px);
+    }
 }

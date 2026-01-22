@@ -1,18 +1,18 @@
 
-function loadDishTemplate(type, i) {
-    const dishElement = document.getElementById(`${type}ID`);
-    console.log(`Generiere ID: ${type}${i}BtnID`);
+function loadDishTemplate(category, i) {
+    const dishElement = document.getElementById(`${category}ID`);
+    console.log(`Generiere ID: ${category}${i}BtnID`);
     dishElement.innerHTML += `
      <div class="dish">
-         <img class="dish-img" src="./assets/food/${type + i}.png" alt="${dishes[type][i].name}">
+         <img class="dish-img" src="./assets/food/${category + i}.png" alt="${dishes[category][i].name}">
          <div class="dish-description">
-             <h3>${dishes[type][i].name}</h3>
-             <p>${dishes[type][i].description}</p>
+             <h3>${dishes[category][i].name}</h3>
+             <p>${dishes[category][i].description}</p>
          </div>
          <div class="dish-price">
-             <p>${numberToEuro(dishes[type][i].price)}</p>
-             <div class="display-flex amount-adjust-div" id="${type}${i}BtnID">
-                <button onclick="addToBasket('${type}',${i}); changeBtn('${type}',${i})">add to basket</button>
+             <p>${numberToEuro(dishes[category][i].price)}</p>
+             <div class="display-flex amount-adjust-div" id="${category}${i}BtnID">
+                <button class="addToBasketBtn" onclick="addToBasket('${category}',${i}); changeBtn('${category}',${i})">add to basket</button>
              </div>
          </div>
      </div>`
@@ -50,7 +50,7 @@ function loadBasketDishTemplate(dish, category, i) {
                 <div class="basket-dish">
                 <div class="display-flex">
                     <p>${dish.amount} x ${dish.name}</p>
-                    <img src="" alt="Papierkorb">
+                    <img id="${category}${i}trashID" onmousedown="clickIcon('${category}',${i},'trash')" onmouseup="clickedIcon('${category}',${i}, trash)" class="trashcan" src="./assets/icons/trashcan.png" alt="Papierkorb">
                 </div>
                 <div class="display-flex amount-price">
                     <div class="display-flex amount-adjust-div">
@@ -77,7 +77,7 @@ function changeBtn(category, i) {
 function restoreBtn(category, i) {
     let addButton = document.getElementById(`${category}${i}BtnID`);
     addButton.innerHTML = `
-     <button onclick="addToBasket('${category}',${i}); changeBtn('${category}',${i})">add to basket</button>
+     <button class="addToBasketBtn" onclick="addToBasket('${category}',${i}); changeBtn('${category}',${i})">add to basket</button>
     `
 }
 

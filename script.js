@@ -59,3 +59,18 @@ function numberToEuro(number) {
     let currency = `${number.toFixed(2).toString().replace('.', ',')} Є`;
     return currency;
 }
+
+function clickIcon(category, i, Icontype) {
+    console.log(Icontype);
+        dishes[category][i].amount = 0;
+        loadBasketTemplate();  
+        restoreBtn(category, i);
+    }
+
+    function clickedIcon(category, i, Icontype) {
+    console.log(Icontype);
+    
+        // dishes[category][i].amount = 0;
+        // loadBasketTemplate();  
+    }
+

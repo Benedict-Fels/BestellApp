@@ -12,7 +12,7 @@ function loadDishTemplate(category, i) {
          <div class="dish-price">
              <p>${numberToEuro(dishes[category][i].price)}</p>
              <div class="add-basket-button" id="${category}${i}BtnID">
-                <button class="addToBasketBtn" onclick="addToBasket('${category}',${i}); changeBtn('${category}',${i})">add to basket</button>
+                <button class="addToBasketBtn" onmouseup="addToBasket('${category}',${i}); changeBtn('${category}',${i})">add to basket</button>
              </div>
          </div>
      </div>`
@@ -66,7 +66,7 @@ function loadBasketDishTemplate(dish, category, i) {
 }
 
 function changeBtn(category, i) {
-    let addButton = document.getElementById(`${category}${i}BtnID`);
+    const addButton = document.getElementById(`${category}${i}BtnID`);
     addButton.classList.add('amount-adjust-div');
     addButton.innerHTML = `
      <svg onclick="removeFromBasket('${category}',${i})" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 8 8"><path d="M0 0v2h8v-2h-8z" transform="translate(0 3)"/></svg>
@@ -76,7 +76,7 @@ function changeBtn(category, i) {
 }
 
 function restoreBtn(category, i) {
-    let addButton = document.getElementById(`${category}${i}BtnID`);
+    const addButton = document.getElementById(`${category}${i}BtnID`);
     addButton.classList.remove('amount-adjust-div');
     addButton.innerHTML = `
      <button class="addToBasketBtn" onclick="addToBasket('${category}',${i}); changeBtn('${category}',${i})">add to basket</button>

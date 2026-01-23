@@ -10,7 +10,7 @@ let dishes = {
       "name": "All meat burger",
       "description": "Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ sauce",
       "price": 15.90,
-      "amount": 2
+      "amount": 0
     },
     {
       "name": "Beef red burger",
@@ -56,7 +56,7 @@ let dishes = {
       "name": "Warm beef arugula salad",
       "description": "Beef, Arugula, Field salad, Greek feta, Cherry tomatoes, Sun-dried Tomatoes, Balsamic-vinegar dressing",
       "price": 16.90,
-      "amount": 1
+      "amount": 0
     },
     {
       "name": "Mini green Salad",

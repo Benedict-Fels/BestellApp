@@ -16,7 +16,7 @@
     <title>BestellApp</title>
 </head>
 
-<body onload="loadDishes(),loadBasketTemplate()">
+<body onload="loadDishes();loadBasketTemplate();registerWidth()">
     <header>
         <img src="./assets/Bestell-app-white.png" alt="">
         <img src="./assets/burger-menu.png" alt="">
@@ -32,10 +32,8 @@
         </div>
         <p class="motto">The best of Burgers, Pizza and Greens, all in one great place</p>
     </section>
-    <div class="basket">
-        <div id="basketID">
+        <div class="basket" id="basketID">
         </div>
-    </div>
     <section>
         <div class="dishes-headline wrapper">
             <img class="burger-icon" src="./assets/icons/burger-icon.png" alt="Burger Icon">
@@ -68,8 +66,8 @@
         <img id="bestellappID" onmousedown="registerClick('','','bestellapp')" onmouseup="resetIcon('bestellapp')" class="footer-icons display-none" src="./assets/icons/bestellapp.png"
             alt="BestellApp">
         <div class="cart display-none">
-            <img class="footer-icons display-none" onmousedown="registerClick('','','shopping-cart')" onmouseup="openBasket()" id="shopping-cartID" src="./assets/icons/shopping-cart.png" alt="Shopping Cart">
-            <p id="shoppingCartAmountID" class="number display-none">3</p>
+            <img class="footer-icons display-none" onmousedown="registerClick('','','shopping-cart')" onmouseup="toggleShoppingCart()" id="shopping-cartID" src="./assets/icons/shopping-cart.png" alt="Shopping Cart">
+            <p id="shoppingCartAmountID" class="number display-none"></p>
         </div>
     </footer>
 </body>

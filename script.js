@@ -5,14 +5,28 @@ let subTotal = 0;
 let basketVis = true;
 let screenWidth = '';
 
+
+window.addEventListener('resize', function (e) {
+    let currentWidth = window.innerWidth;
+    if (currentWidth > 660 && screenWidth == 'narrow') {
+        registerWidth();
+        loadDishes();
+    }
+    if (currentWidth < 660 && screenWidth == 'wide') {
+        registerWidth();
+        loadDishes()
+    }
+});
+
 function registerWidth() {
-    if (window.screen.width >= 660) {
+    if (window.innerWidth >= 660) {
         screenWidth = 'wide';
     }
     else {
         screenWidth = 'narrow';
     }
-    // return screenWidth;
+    console.log(screenWidth);
+    return screenWidth
 }
 
 function loadDishes() {

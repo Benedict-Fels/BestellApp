@@ -43,7 +43,7 @@ function loadBasketTemplate() {
                      <p>Total</p>
                      <p>${numberToEuro(calcSubTotal() + 4.99)}</p>
                  </div>
-                 <button class="orderButton">Buy now ${numberToEuro(calcSubTotal() + 4.99)}</button>
+                 <button class="orderButton" onmouseup="openDialog()">Buy now ${numberToEuro(calcSubTotal() + 4.99)}</button>
              </div>
     `
 }

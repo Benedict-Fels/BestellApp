@@ -15,6 +15,7 @@
     <link rel="icon" href="./assets/Bestell-App-Logo.png">
     <title>BestellApp</title>
 </head>
+
 <body onload="loadDishes();loadBasketTemplate();registerWidth()">
     <header>
         <img src="./assets/Bestell-app-white.png" alt="">
@@ -60,14 +61,26 @@
         <span class="footer-text">©2025 BurgerHouse</span>
         <span class="footer-text">Imprint</span>
         <span class="footer-text">Cookie Preferences</span>
-        <img id="homeID" onmousedown="registerClick('','','home')" onmouseup="resetIcon('home')" class="footer-icons display-none" src="./assets/icons/home.png" alt="Home">
-        <img id="personID" onmousedown="registerClick('','','person')" onmouseup="resetIcon('person')" class="footer-icons display-none" src="./assets/icons/person.png" alt="Person">
-        <img id="bestellappID" onmousedown="registerClick('','','bestellapp')" onmouseup="resetIcon('bestellapp')" class="footer-icons display-none" src="./assets/icons/bestellapp.png"
-            alt="BestellApp">
+        <img id="homeID" onmousedown="registerClick('','','home')" onmouseup="resetIcon('home')"
+            class="footer-icons display-none" src="./assets/icons/home.png" alt="Home">
+        <img id="personID" onmousedown="registerClick('','','person')" onmouseup="resetIcon('person')"
+            class="footer-icons display-none" src="./assets/icons/person.png" alt="Person">
+        <img id="bestellappID" onmousedown="registerClick('','','bestellapp')" onmouseup="resetIcon('bestellapp')"
+            class="footer-icons display-none" src="./assets/icons/bestellapp.png" alt="BestellApp">
         <div class="cart">
-            <img class="footer-icons" onmousedown="registerClick('','','shopping-cart')" onmouseup="toggleBasket()" id="shopping-cartID" src="./assets/icons/shopping-cart.png" alt="Shopping Cart">
+            <img class="footer-icons" onmousedown="registerClick('','','shopping-cart')" onmouseup="toggleBasket()"
+                id="shopping-cartID" src="./assets/icons/shopping-cart.png" alt="Shopping Cart">
             <p id="shoppingCartAmountID" class="number display-none"></p>
         </div>
+            <dialog class="dialog-div" id="dialogID" onclick="closeDialog()">
+                <!-- <div id="dialogDivID" > -->
+                    <img class="close-button" onmouseup="closeDialog()" src="./assets/icons/close.png">
+                    <img class="foodtruck" src="./assets/icons/foodtruck.png">
+                    <p class="order-confirmed">Order confirmed!</p>
+                    <p>Your food is on the way</p>
+                <!-- </div>
+                </div> -->
+            </dialog>
     </footer>
 </body>
 

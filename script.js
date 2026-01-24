@@ -1,6 +1,7 @@
 const basketRef = document.getElementById('basketID');
 const shopCart = document.getElementById('shopping-cartID');
 const CartAmountRef = document.getElementById('shoppingCartAmountID');
+const dialog = document.getElementById("dialogID");
 let subTotal = 0;
 let basketVis = true;
 let screenWidth = '';
@@ -161,4 +162,18 @@ function toggleShoppingCartIcon() {
         shopCart.src = './assets/icons/shopping-cart-filled.png';
         CartAmountRef.classList.remove('display-none');
     }
+}
+
+function openDialog() {
+    if (subTotal > 0) {
+        toggleBasket();
+        dialog.showModal();
+        dialog.classList.add("dialog");
+    }
+}
+
+function closeDialog() {
+    dialog.close();
+    dialog.classList.remove("dialog");
+    // closeButton.classList.remove("button-press");
 }

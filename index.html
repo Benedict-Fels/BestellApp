@@ -16,12 +16,14 @@
     <title>BestellApp</title>
 </head>
 
-<body onload="loadDishes();loadBasketTemplate();registerWidth()">
+<body onload="loadDishes();loadBasketTemplate();registerWidth()" onclick="closeBasket()">
     <header>
         <img src="./assets/Bestell-app-white.png" alt="">
         <img src="./assets/burger-menu.png" alt="">
     </header>
     <div class="basket" id="basketID">
+        <div id="basketPropStopID">
+        </div>
     </div>
     <img class="background-img" src="./assets/background-dishes.jpg" alt="verschiedene Pizza und Burger Gerichte">
     <section class="wrapper">
@@ -73,13 +75,12 @@
             <p id="shoppingCartAmountID" class="number display-none"></p>
         </div>
             <dialog class="dialog-div" id="dialogID" onclick="closeDialog()">
-                <!-- <div id="dialogDivID" > -->
+                <div id="dialogDivID">
                     <img class="close-button" onmouseup="closeDialog()" src="./assets/icons/close.png">
                     <img class="foodtruck" src="./assets/icons/foodtruck.png">
                     <p class="order-confirmed">Order confirmed!</p>
                     <p>Your food is on the way</p>
-                <!-- </div>
-                </div> -->
+                </div>
             </dialog>
     </footer>
 </body>

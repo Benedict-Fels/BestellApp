@@ -1,33 +1,30 @@
 const basketRef = document.getElementById('basketID');
+const basketPropStop = document.getElementById("basketPropStopID");
 const shopCart = document.getElementById('shopping-cartID');
 const CartAmountRef = document.getElementById('shoppingCartAmountID');
 const dialog = document.getElementById("dialogID");
+const dialogDiv = document.getElementById("dialogDivID");
 let subTotal = 0;
 let basketVis = true;
 let screenWidth = '';
-
 
 window.addEventListener('resize', function () {
     let currentWidth = window.innerWidth;
     if (currentWidth > 1270 && screenWidth == 'narrow') {
         registerWidth();
-        // loadDishes();
     }
     if (currentWidth < 1270 && screenWidth == 'wide') {
         registerWidth();
-        // loadDishes();
     }
 });
 
 function registerWidth() {
-    if (window.innerWidth >= 660) {
+    if (window.innerWidth >= 1270) {
         screenWidth = 'wide';
     }
     else {
         screenWidth = 'narrow';
     }
-    console.log(screenWidth);
-    return screenWidth
 }
 
 function loadDishes() {
@@ -148,8 +145,21 @@ function registerClick(category, i, Icontype) {
 function toggleBasket() {
     basketRef.classList.toggle('display-none');
     basketVis = !basketVis;
-    console.log(basketVis);
     toggleShoppingCartIcon();
+}
+
+function closeBasket() {
+    basketRef.addEventListener('click', (event) => event.stopPropagation());
+    shopCart.addEventListener('click', (event) => event.stopPropagation());
+    const collection = document.getElementsByClassName("add-basket-button");
+    for (let i = 0; i < collection.length; i++) {
+        collection[i].addEventListener('click', (event) => event.stopPropagation());  
+    }
+    if (basketVis = true) {
+        basketRef.classList.add('display-none');
+        basketVis = false;
+        toggleShoppingCartIcon();
+    }
 }
 
 function toggleShoppingCartIcon() {
@@ -172,8 +182,9 @@ function openDialog() {
     }
 }
 
+
 function closeDialog() {
+    dialogDiv.addEventListener('click', (event) => event.stopPropagation());
     dialog.close();
     dialog.classList.remove("dialog");
-    // closeButton.classList.remove("button-press");
 }

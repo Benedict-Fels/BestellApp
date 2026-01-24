@@ -1,7 +1,6 @@
 
 function loadDishTemplate(category, i) {
     const dishElement = document.getElementById(`${category}ID`);
-    // console.log(`Generiere ID: ${category}${i}BtnID`);
     dishElement.innerHTML += `
      <div class="dish">
          <img class="dish-img" src="./assets/food/${category + i}.png" alt="${dishes[category][i].name}">
@@ -51,18 +50,18 @@ function loadBasketTemplate() {
 function loadBasketDishTemplate(dish, category, i) {
     return `
                 <div class="basket-dish">
-                <div class="display-flex">
-                    <p>${dish.amount} x ${dish.name}</p>
-                    <img id="${category}${i}trashID" onmouseup="deleteOrder('${category}',${i})" onmousedown="registerClick('${category}',${i},'trash')" class="trashcan" src="./assets/icons/trash.png" alt="Papierkorb">
-                </div>
-                <div class="display-flex amount-price">
-                    <div class="display-flex amount-adjust-div">
-                        <svg onclick="removeFromBasket('${category}',${i})" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 8 8"><path d="M0 0v2h8v-2h-8z" transform="translate(0 3)"/></svg>
-                        <p>${dish.amount}</p>
-                        <svg onclick="addToBasket('${category}',${i})" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="black"><path d="M10 1H6V6L1 6V10H6V15H10V10H15V6L10 6V1Z" fill="#030708"/></svg>
+                    <div class="display-flex">
+                        <p>${dish.amount} x ${dish.name}</p>
+                        <img id="${category}${i}trashID" onmouseup="deleteOrder('${category}',${i})" onmousedown="registerClick('${category}',${i},'trash')" class="trashcan" src="./assets/icons/trash.png" alt="Papierkorb">
                     </div>
-                    <p>${numberToEuro(dish.price)}</p>
-                </div>
+                    <div class="display-flex amount-price">
+                        <div class="display-flex amount-adjust-div">
+                            <svg onclick="removeFromBasket('${category}',${i})" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 8 8"><path d="M0 0v2h8v-2h-8z" transform="translate(0 3)"/></svg>
+                            <p>${dish.amount}</p>
+                            <svg onclick="addToBasket('${category}',${i})" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="black"><path d="M10 1H6V6L1 6V10H6V15H10V10H15V6L10 6V1Z" fill="#030708"/></svg>
+                        </div>
+                        <p>${numberToEuro(dish.price)}</p>
+                    </div>
                 </div>
             
     `

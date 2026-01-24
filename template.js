@@ -21,7 +21,10 @@ function loadDishTemplate(category, i) {
 function loadBasketTemplate() {
     const basket = document.getElementById('basketID');
     basket.innerHTML = `
-             <h4>Your Basket</h4>
+             <div class="basket-top">
+                 <h4>Your Basket</h4>
+                 <img id="closeButtonID" class="close-button" onmouseup="toggleBasket()" src="./assets/icons/close.png" alt="Close Button">
+             </div>
              <div class="basket-dishes">
                  ${loadBasketDish()}
              </div>

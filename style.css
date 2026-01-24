@@ -68,6 +68,7 @@ h1 span {
     font-size: 24px;
     font-weight: 700;
     text-align: center;
+    padding-bottom: 42px;
 }
 
 .dishes-headline {
@@ -77,7 +78,7 @@ h1 span {
     color: white;
     box-sizing: border-box;
     align-items: center;
-    margin-top: 64px;
+    margin-top: 32px;
     padding-left: 60px;
     padding-right: 60px;
 }
@@ -85,7 +86,7 @@ h1 span {
 h2 {
     font-size: 40px;
     padding-left: 44px;
-    padding-top: 8px;
+    padding-top: 16px;
     padding-bottom: 16px;
 }
 
@@ -123,24 +124,42 @@ h2 {
     position: sticky;
     top: 20px;
     width: 400px;
-    height: 700px;
-    margin-bottom: -700px;
+    height: 600px;
+    margin-bottom: -600px;
     background-color: #363534;
     border-radius: 20px 0 0 20px;
     z-index: 3;
     justify-self: end;
     color: white;
+    transition: all 0.25s;
+    transition-behavior: allow-discrete;
+}
 
+.basket-top {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+.close-button {
+    position: absolute;
+    margin: 0;
+    top: 16px;
+    right: 16px;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
 }
 
 .basket-dishes {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 330px;
+    height: 300px;
     overflow-y: auto;
     box-sizing: initial;
-    margin: 8px 26px;
+    margin: 0 26px;
 }
 
 .basket-dish {
@@ -205,8 +224,8 @@ h4 {
     font-size: 32px;
     color: #FDEADC;
     text-align: center;
-    padding-top: 36px;
-    padding-bottom: 24px;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 
@@ -226,8 +245,8 @@ h4 {
 }
 
 .orderButton {
-    padding: 16px;
-    margin: 16px;
+    padding: 14px;
+    margin: 12px 0;
     font-size: 32px;
     font-weight: 700;
     border-radius: 30px;
@@ -280,7 +299,7 @@ h3 {
 }
 
 footer {
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -296,13 +315,12 @@ footer {
 
 .display-none {
     display: none;
+    /* opacity: 0; */
 }
 
 .cart {
     position: relative;
-    display: flex;
-    /* height: 80px;
-    width: 80px; */
+    display: none;
     align-items: end;
 }
 
@@ -344,19 +362,7 @@ footer {
     }
 }
 
-@media (max-width: 1280px) {
-    .basket {
-        width: 320px;
-    }
-
-    .white-line {
-        width: 260px;
-    }
-}
-
-
-
-@media (max-width: 1200px) {
+@media (max-width: 1270px) {
     .dish {
         flex-direction: column;
         width: 240px;
@@ -378,11 +384,19 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-right: 330px;
     }
-}
 
-@media (max-width: 660px) {
+    .dish{
+        flex: 0 0 calc(50% - 38px);
+        box-sizing: border-box;
+    }
+
+    .basket {
+        top: auto;
+        justify-self: center;
+        top: calc(50% - 300px);
+        border-radius: 20px 20px 20px 20px;
+    }
 
     .burger-house {
         flex-direction: column-reverse;
@@ -392,38 +406,39 @@ footer {
         margin: 6px 0;
     }
 
-    .dishes-headline{
+    .dishes-headline {
         flex-direction: column;
         height: 75px;
-        margin-top: 92px;
+        margin-top: 60px;
     }
 
-    .burger-icon{
+    .burger-icon {
         padding: 0;
         bottom: 0px;
         margin-top: -75px;
     }
 
-    .pizza-icon{
+    .pizza-icon {
         padding: 0;
         bottom: 0px;
         margin-top: -66px;
         margin-bottom: -10px;
     }
 
-    .salad-icon{
+    .salad-icon {
         padding: 0;
         bottom: 0px;
         margin-top: -66px;
         margin-bottom: -10px;
     }
 
-    h2{
+    h2 {
         padding: 0;
+        padding-top: 5px;
     }
 
     .last-section {
-        margin-bottom: 80px;
+        margin-bottom: 70px;
     }
 
     footer {
@@ -449,5 +464,40 @@ footer {
 
     .dishes {
         margin: 0 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    header{
+        justify-content: space-around;
+    }
+
+    header img{
+        padding:0
+    }
+
+    .wrapper{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .basket{
+        width: 305px;
+    }
+    .white-line{
+        width: 245px;
+    }
+    .orderButton{
+        font-size: 26px;
+    }
+}
+
+@media (max-height: 750px) {
+    .basket{
+        top: 10px;
+        height: 570px;
+    }
+
+    .basket-dishes{
+        height: 270px;
     }
 }

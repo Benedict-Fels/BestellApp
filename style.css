@@ -27,6 +27,23 @@ header img {
     width: 100%;
     height: 300px;
     object-fit: cover;
+    background-position: bottom;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 6px 10px;
+}
+
+button {
+    cursor: pointer;
 }
 
 .burger-logo {
@@ -91,171 +108,27 @@ h2 {
     padding-bottom: 16px;
 }
 
+.food-icon {
+    height: 90px;
+    object-fit: contain;
+    position: relative;
+    bottom: 0px;
+    padding-left: 60px;
+}
+
 .burger-icon {
-    height: 90px;
-    object-fit: contain;
-    position: relative;
-    bottom: 16px;
-    padding-left: 60px;
-}
-
-.pizza-icon {
-    height: 90px;
-    object-fit: contain;
-    position: relative;
-    bottom: 0px;
-    padding-left: 60px;
-}
-
-.salad-icon {
-    height: 90px;
-    object-fit: contain;
-    position: relative;
-    bottom: 0px;
-    padding-left: 60px;
+    bottom: 14px;
 }
 
 .addToBasketBtn {
-    background-color: rgb(231, 108,31);
-    border: black solid 2px;
+    background-color: rgb(231, 108, 31);
+    border: black solid 1px;
     border-radius: 5px;
     color: white;
-    padding: 4px;
+    padding: 3.6px;
     min-width: 120px;
     display: flex;
     justify-content: center;
-}
-
-.basket {
-    position: sticky;
-    top: 20px;
-    width: 400px;
-    height: 600px;
-    margin-bottom: -600px;
-    background-color: #363534;
-    border-radius: 20px 0 0 20px;
-    z-index: 3;
-    justify-self: end;
-    color: white;
-}
-
-.basket-top {
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-
-.close-button {
-    position: absolute;
-    margin: 0;
-    top: 16px;
-    right: 16px;
-    height: 24px;
-    width: 24px;
-    cursor: pointer;
-}
-
-.basket-dishes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 300px;
-    overflow-y: auto;
-    box-sizing: initial;
-    margin: 0 26px;
-}
-
-.basket-dish {
-    background-color: #FDEADC;
-    color: black;
-    border-radius: 10px;
-    margin: 4px 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.display-flex {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding: 6px 10px;
-}
-
-.add-basket-button {
-    display: flex;
-    width: 100%;
-    justify-content: end;
-    box-sizing: border-box;
-}
-
-.trashcan {
-    height: 22px;
-    object-fit: contain;
-    cursor: pointer;
-    padding-left: 16px;
-}
-
-.amount-adjust-div {
-    width: 60px;
-    padding: 0;
-    align-items: center;
-}
-
-.amount-adjust-div svg {
-    height: 16px;
-    width: 16px;
-    cursor: pointer;
-}
-
-button {
-    cursor: pointer;
-}
-
-.amount-adjust-div p {
-    padding: 0 8px;
-}
-
-.basket p {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-h4 {
-    font-size: 32px;
-    color: #FDEADC;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 20px;
-}
-
-
-.basket-price-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 6px 32px;
-    flex-grow: 1;
-}
-
-.white-line {
-    border-bottom: 3px white solid;
-    border-radius: 5px;
-    width: 340px;
-}
-
-.orderButton {
-    padding: 14px;
-    margin: 12px 0;
-    font-size: 32px;
-    font-weight: 700;
-    border-radius: 30px;
-    background-color: #E76C1F;
-    color: #FBFBFB;
 }
 
 .dishes {
@@ -317,10 +190,6 @@ footer {
     cursor: pointer;
 }
 
-.display-none {
-    display: none;
-    /* opacity: 0; */
-}
 
 .cart {
     position: relative;
@@ -360,11 +229,11 @@ footer {
     transition: all 1s ease;
 }
 
-dialog p{
+dialog p {
     font-size: 29px;
 }
 
-.order-confirmed{
+.order-confirmed {
     font-size: 42px;
     font-weight: 700px;
 }
@@ -416,7 +285,7 @@ dialog p{
         justify-content: center;
     }
 
-    .dish{
+    .dish {
         flex: 0 0 calc(50% - 38px);
         box-sizing: border-box;
     }
@@ -446,16 +315,10 @@ dialog p{
         padding: 0;
         bottom: 0px;
         margin-top: -75px;
+        margin-bottom: 0;
     }
 
-    .pizza-icon {
-        padding: 0;
-        bottom: 0px;
-        margin-top: -66px;
-        margin-bottom: -10px;
-    }
-
-    .salad-icon {
+    .food-icon {
         padding: 0;
         bottom: 0px;
         margin-top: -66px;
@@ -498,40 +361,43 @@ dialog p{
 }
 
 @media (max-width: 450px) {
-    header{
+    header {
         justify-content: space-around;
     }
 
-    header img{
-        padding:0
+    header img {
+        padding: 0
     }
 
-    .dish{
+    .dish {
         margin: 16px 0;
     }
 
-    .wrapper{
+    .wrapper {
         margin-left: 0;
         margin-right: 0;
     }
-    .basket{
+
+    .basket {
         width: 305px;
     }
-    .white-line{
+
+    .white-line {
         width: 245px;
     }
-    .orderButton{
+
+    .orderButton {
         font-size: 26px;
     }
 }
 
 @media (max-height: 750px) {
-    .basket{
+    .basket {
         top: 10px;
         height: 570px;
     }
 
-    .basket-dishes{
+    .basket-dishes {
         height: 270px;
     }
 }

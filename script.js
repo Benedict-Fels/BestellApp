@@ -149,16 +149,18 @@ function toggleBasket() {
 }
 
 function closeBasket() {
-    basketRef.addEventListener('click', (event) => event.stopPropagation());
-    shopCart.addEventListener('click', (event) => event.stopPropagation());
-    const collection = document.getElementsByClassName("add-basket-button");
-    for (let i = 0; i < collection.length; i++) {
-        collection[i].addEventListener('click', (event) => event.stopPropagation());  
-    }
-    if (basketVis = true) {
-        basketRef.classList.add('display-none');
-        basketVis = false;
-        toggleShoppingCartIcon();
+    if (screenWidth == 'narrow') {
+        basketRef.addEventListener('click', (event) => event.stopPropagation());
+        shopCart.addEventListener('click', (event) => event.stopPropagation());
+        const collection = document.getElementsByClassName("add-basket-button");
+        for (let i = 0; i < collection.length; i++) {
+            collection[i].addEventListener('click', (event) => event.stopPropagation());
+        }
+        if (basketVis = true) {
+            basketRef.classList.add('display-none');
+            basketVis = false;
+            toggleShoppingCartIcon();
+        }  
     }
 }
 
@@ -174,14 +176,20 @@ function toggleShoppingCartIcon() {
     }
 }
 
-function openDialog() {
+function finalizeOrder() {
     if (subTotal > 0) {
         toggleBasket();
         dialog.showModal();
         dialog.classList.add("dialog");
+        let categories = Object.keys(dishes);
+        categories.forEach((category) => {
+            dishes[category].forEach((dish, i) => {
+                dish.amount = 0;
+                restoreBtn(category, i);
+            });
+        });
     }
 }
-
 
 function closeDialog() {
     dialogDiv.addEventListener('click', (event) => event.stopPropagation());

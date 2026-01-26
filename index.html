@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./basket.css">
     <script defer src="./db.js"></script>
     <script defer src="./script.js"></script>
     <script defer src="./template.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="icon" href="./assets/Bestell-App-Logo.png">
     <title>BestellApp</title>
@@ -25,7 +26,8 @@
         <div id="basketPropStopID">
         </div>
     </div>
-    <img class="background-img" src="./assets/background-dishes.jpg" alt="verschiedene Pizza und Burger Gerichte">
+    <img class="background-img" src="./assets/background-dishes-compressed.jpg"
+        alt="verschiedene Pizza und Burger Gerichte">
     <section class="wrapper">
         <div class="top-section">
             <img class="burger-logo" src="./assets/burger-logo.png" alt="Burger Hause Logo">
@@ -38,7 +40,7 @@
     </section>
     <section>
         <div class="dishes-headline wrapper">
-            <img class="burger-icon" src="./assets/icons/burger-icon.png" alt="Burger Icon">
+            <img class="food-icon burger-icon" src="./assets/icons/burger-icon.png" alt="Burger Icon">
             <h2>Burger</h2>
         </div>
         <section class="dishes wrapper" id="burgerID">
@@ -46,14 +48,14 @@
     </section>
     <section>
         <div class="dishes-headline wrapper">
-            <img class="pizza-icon" src="./assets/icons/pizza-icon.png" alt="Burger Icon">
+            <img class="food-icon" src="./assets/icons/pizza-icon.png" alt="Burger Icon">
             <h2>Pizza (30cm)</h2>
         </div>
         <section class="dishes wrapper" id="pizzaID"></section>
     </section>
     <section class="last-section">
         <div class="dishes-headline wrapper">
-            <img class="salad-icon" src="./assets/icons/salad-icon.png" alt="Burger Icon">
+            <img class="food-icon" src="./assets/icons/salad-icon.png" alt="Burger Icon">
             <h2>Salat</h2>
         </div>
         <section class="dishes wrapper" id="saladID">
@@ -74,14 +76,14 @@
                 id="shopping-cartID" src="./assets/icons/shopping-cart.png" alt="Shopping Cart">
             <p id="shoppingCartAmountID" class="number display-none"></p>
         </div>
-            <dialog class="dialog-div" id="dialogID" onclick="closeDialog()">
-                <div id="dialogDivID">
-                    <img class="close-button" onmouseup="closeDialog()" src="./assets/icons/close.png">
-                    <img class="foodtruck" src="./assets/icons/foodtruck.png">
-                    <p class="order-confirmed">Order confirmed!</p>
-                    <p>Your food is on the way</p>
-                </div>
-            </dialog>
+        <dialog class="dialog-div" id="dialogID" onclick="closeDialog()">
+            <div id="dialogDivID">
+                <img class="close-button" onmouseup="closeDialog()" src="./assets/icons/close.png">
+                <img class="foodtruck" src="./assets/icons/foodtruck.png">
+                <p class="order-confirmed">Order confirmed!</p>
+                <p>Your food is on the way</p>
+            </div>
+        </dialog>
     </footer>
 </body>
 

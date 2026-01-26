@@ -170,6 +170,7 @@ function toggleShoppingCartIcon() {
         CartAmountRef.classList.add('display-none');
     } else if (subTotal == 0) {
         shopCart.src = './assets/icons/shopping-cart.png';
+        CartAmountRef.classList.add('display-none');
     } else {
         shopCart.src = './assets/icons/shopping-cart-filled.png';
         CartAmountRef.classList.remove('display-none');
@@ -184,10 +185,15 @@ function finalizeOrder() {
         let categories = Object.keys(dishes);
         categories.forEach((category) => {
             dishes[category].forEach((dish, i) => {
-                dish.amount = 0;
-                restoreBtn(category, i);
+                if (dish.amount > 0) {
+                    dish.amount = 0;
+                    restoreBtn(category, i); 
+                }
             });
         });
+        calcSubTotal();
+        loadBasketTemplate();
+        toggleShoppingCartIcon();
     }
 }
 

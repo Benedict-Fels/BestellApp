@@ -118,3 +118,43 @@ h4 {
     background-color: #E76C1F;
     color: #FBFBFB;
 }
+
+@media (min-width: 1440px) {
+    .basket {
+        right: calc(50% - 720px);
+    }
+}
+
+@media (max-width: 1270px) {
+    .basket {
+        top: auto;
+        justify-self: center;
+        top: calc(50% - 300px);
+        border-radius: 20px 20px 20px 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .basket {
+        width: 305px;
+    }
+
+    .white-line {
+        width: 245px;
+    }
+
+    .orderButton {
+        font-size: 26px;
+    }
+}
+
+@media (max-height: 750px) {
+    .basket {
+        top: 10px;
+        height: 570px;
+    }
+
+    .basket-dishes {
+        height: 270px;
+    }
+}

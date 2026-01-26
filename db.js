@@ -1,4 +1,4 @@
-let dishes = {
+const dishes = {
   "burger": [
     {
       "name": "Veggie mushroom black burger",

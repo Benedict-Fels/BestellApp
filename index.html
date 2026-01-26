@@ -30,7 +30,7 @@
         alt="verschiedene Pizza und Burger Gerichte">
     <section class="wrapper">
         <div class="top-section">
-            <img class="burger-logo" src="./assets/burger-logo.png" alt="Burger Hause Logo">
+            <img class="burger-logo" src="./assets/burger-logo.png" alt="Burger House Logo">
         </div>
         <div class="burger-house">
             <h1>Burger<span>House</span></h1>
@@ -71,10 +71,10 @@
             class="footer-icons display-none" src="./assets/icons/person.png" alt="Person">
         <img id="bestellappID" onmousedown="registerClick('','','bestellapp')" onmouseup="resetIcon('bestellapp')"
             class="footer-icons display-none" src="./assets/icons/bestellapp.png" alt="BestellApp">
-        <div class="cart">
-            <img class="footer-icons" onmousedown="registerClick('','','shopping-cart')" onmouseup="toggleBasket()"
-                id="shopping-cartID" src="./assets/icons/shopping-cart.png" alt="Shopping Cart">
-            <p id="shoppingCartAmountID" class="number display-none"></p>
+            <div class="cart" onmouseup="toggleBasket()" onmousedown="registerClick('','','shopping-cart')">
+                <img class="footer-icons" id="shopping-cartID" src="./assets/icons/shopping-cart.png"
+                    alt="Shopping Cart">
+                <p id="shoppingCartAmountID" class="number display-none"></p>
         </div>
         <dialog class="dialog-div" id="dialogID" onclick="closeDialog()">
             <div id="dialogDivID">

@@ -28,15 +28,12 @@ function registerWidth() {
 }
 
 function loadDishes() {
-    for (let i = 0; i < dishes.burger.length; i++) {
-        loadDishTemplate('burger', i);
-    }
-    for (let i = 0; i < dishes.pizza.length; i++) {
-        loadDishTemplate('pizza', i);
-    }
-    for (let i = 0; i < dishes.salad.length; i++) {
-        loadDishTemplate('salad', i);
-    }
+    let categories = Object.keys(dishes);
+    categories.forEach((category) => {
+        dishes[category].forEach((dish, i) => {
+            loadDishTemplate(category, i);
+        });
+    });
 }
 
 function loadBasketDish() {
@@ -53,7 +50,7 @@ function loadBasketDish() {
 }
 
 function addToBasket(category, i) {
-    if (subTotal == 0 && screenWidth == 'wide') {
+    if (screenWidth == 'wide') {
         basketRef.classList.remove('display-none');
         basketVis = true;
     }
@@ -106,7 +103,7 @@ function calcSubTotal() {
             subTotal += dish.amount * dish.price;
         });
     });
-    if (subTotal == 0) {
+    if (subTotal == 0 && screenWidth == 'narrow') {
         basketRef.classList.add('display-none');
         basketVis = false;
         shopCart.src = './assets/icons/shopping-cart.png';
@@ -145,6 +142,7 @@ function registerClick(category, i, Icontype) {
 function toggleBasket() {
     basketRef.classList.toggle('display-none');
     basketVis = !basketVis;
+    document.getElementById('closeButtonID').classList.remove('display-none');
     toggleShoppingCartIcon();
 }
 
@@ -160,7 +158,7 @@ function closeBasket() {
             basketRef.classList.add('display-none');
             basketVis = false;
             toggleShoppingCartIcon();
-        }  
+        }
     }
 }
 
@@ -187,7 +185,7 @@ function finalizeOrder() {
             dishes[category].forEach((dish, i) => {
                 if (dish.amount > 0) {
                     dish.amount = 0;
-                    restoreBtn(category, i); 
+                    restoreBtn(category, i);
                 }
             });
         });

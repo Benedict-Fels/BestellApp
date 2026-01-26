@@ -22,7 +22,7 @@ function loadBasketTemplate() {
     basket.innerHTML = `
              <div class="basket-top">
                  <h4>Your Basket</h4>
-                 <img id="closeButtonID" class="close-button" onmouseup="toggleBasket()" src="./assets/icons/close.png" alt="Close Button">
+                 <img id="closeButtonID" class="close-button display-none" onmouseup="toggleBasket()" src="./assets/icons/close.png" alt="Close Button">
              </div>
              <div class="basket-dishes">
                  ${loadBasketDish()}

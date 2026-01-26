@@ -195,12 +195,12 @@ footer {
     position: relative;
     display: none;
     align-items: end;
+    z-index: 3;
 }
 
 .number {
     position: absolute;
     padding: 2px;
-    text-justify: center;
     margin-top: -22px;
     margin-left: 26px;
     z-index: 3;
@@ -238,11 +238,7 @@ dialog p {
     font-weight: 700px;
 }
 
-@media (min-width: 1440px) {
-    .basket {
-        right: calc(50% - 720px);
-    }
-}
+
 
 
 @media (min-width: 1500px) {
@@ -288,13 +284,6 @@ dialog p {
     .dish {
         flex: 0 0 calc(50% - 38px);
         box-sizing: border-box;
-    }
-
-    .basket {
-        top: auto;
-        justify-self: center;
-        top: calc(50% - 300px);
-        border-radius: 20px 20px 20px 20px;
     }
 
     .burger-house {
@@ -377,27 +366,5 @@ dialog p {
         margin-left: 0;
         margin-right: 0;
     }
-
-    .basket {
-        width: 305px;
-    }
-
-    .white-line {
-        width: 245px;
-    }
-
-    .orderButton {
-        font-size: 26px;
-    }
 }
 
-@media (max-height: 750px) {
-    .basket {
-        top: 10px;
-        height: 570px;
-    }
-
-    .basket-dishes {
-        height: 270px;
-    }
-}

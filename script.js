@@ -10,10 +10,10 @@ let screenWidth = '';
 
 window.addEventListener('resize', function () {
     let currentWidth = window.innerWidth;
-    if (currentWidth > 1270 && screenWidth == 'narrow') {
+    if (currentWidth = 1271 && screenWidth == 'narrow') {
         registerWidth();
     }
-    if (currentWidth < 1270 && screenWidth == 'wide') {
+    if (currentWidth = 1270 && screenWidth == 'wide') {
         registerWidth();
     }
 });
@@ -21,9 +21,11 @@ window.addEventListener('resize', function () {
 function registerWidth() {
     if (window.innerWidth >= 1270) {
         screenWidth = 'wide';
+        basketRef.classList.remove('display-none');
     }
     else {
         screenWidth = 'narrow';
+        basketRef.classList.add('display-none');
     }
 }
 

@@ -8,25 +8,23 @@ const dialogDiv = document.getElementById("dialogDivID");
 let subTotal = 0;
 let basketVis = true;
 let screenWidth = '';
+registerWidth();
 
 window.addEventListener('resize', function () {
-    let currentWidth = window.innerWidth;
-    if (currentWidth = 1271 && screenWidth == 'narrow') {
         registerWidth();
-    }
-    if (currentWidth = 1270 && screenWidth == 'wide') {
-        registerWidth();
-    }
 });
 
 function registerWidth() {
     if (window.innerWidth >= 1270) {
         screenWidth = 'wide';
         basketRef.classList.remove('display-none');
+        basketVis = true;
     }
     else {
         screenWidth = 'narrow';
         basketRef.classList.add('display-none');
+        basketVis = false;
+        toggleShoppingCartIcon();
     }
 }
 

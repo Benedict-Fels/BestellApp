@@ -1,6 +1,7 @@
 const basketRef = document.getElementById('basketID');
 const basketPropStop = document.getElementById("basketPropStopID");
 const shopCart = document.getElementById('shopping-cartID');
+const shopCartDiv = document.getElementById('shopping-cart-divID');
 const CartAmountRef = document.getElementById('shoppingCartAmountID');
 const dialog = document.getElementById("dialogID");
 const dialogDiv = document.getElementById("dialogDivID");
@@ -151,7 +152,7 @@ function toggleBasket() {
 function closeBasket() {
     if (screenWidth == 'narrow') {
         basketRef.addEventListener('click', (event) => event.stopPropagation());
-        shopCart.addEventListener('click', (event) => event.stopPropagation());
+        shopCartDiv.addEventListener('click', (event) => event.stopPropagation());
         const collection = document.getElementsByClassName("add-basket-button");
         for (let i = 0; i < collection.length; i++) {
             collection[i].addEventListener('click', (event) => event.stopPropagation());

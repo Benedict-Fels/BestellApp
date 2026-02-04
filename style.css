@@ -238,9 +238,6 @@ dialog p {
     font-weight: 700px;
 }
 
-
-
-
 @media (min-width: 1500px) {
     header {
         padding: 0 calc(50% - 720px);
